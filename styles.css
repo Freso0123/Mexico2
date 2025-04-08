@@ -1,0 +1,403 @@
+/* Variables de color */
+:root {
+    --ocre: #E3B505;
+    --verde: #2A5A3C;
+    --rojo: #9A1F1A;
+    --gris: #F5F5F5;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--verde);
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/Palacio.jpg');
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Estilos para la barra de navegación */
+#navbar {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #FF2D2D !important; /* Rojo más intenso al hover */
+}
+
+#navbar a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FF2D2D;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar a:hover:after {
+    width: 100%;
+}
+
+.btn {
+    background: var(--rojo);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para la sección de empresas */
+.empresas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.empresa-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.empresa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    width: 120px;       /* Tamaño fijo */
+    height: 120px;      /* Tamaño fijo */
+    object-fit: contain; /* Mantiene la proporción sin deformar */
+    margin: 0 auto 15px; /* Centra el logo */
+    filter: grayscale(20%); /* Opcional: da un toque minimalista */
+    transition: filter 0.3s ease;
+}
+
+.empresa-card:hover .logo {
+    filter: grayscale(0%); /* Vuelve a colores al hacer hover */
+}
+
+/* Estilos para la sección "¿Por qué Fracasa México?" */
+.fracaso-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.fracaso-text ul {
+    padding-left: 20px;
+}
+
+.fracaso-text li {
+    margin-bottom: 15px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.fracaso-text li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--rojo);
+    border-radius: 50%;
+}
+
+blockquote {
+    border-left: 4px solid var(--ocre);
+    padding-left: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+.caso-destacado {
+    background: rgba(233, 196, 106, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .fracaso-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para la infografía */
+.infografia-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.infografia-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+
+.infografia-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.infografia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.infografia-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #ddd;
+}
+
+.infografia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.infografia-card.danger {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+}
+
+.infografia-card.warning {
+    border-left-color: #f39c12;
+    background: rgba(243, 156, 18, 0.05);
+}
+
+.infografia-card.dark {
+    border-left-color: #34495e;
+    background: rgba(52, 73, 94, 0.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: inherit;
+}
+
+.datos-curiosos {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+.datos-curiosos h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.datos-curiosos h4 i {
+    margin-right: 10px;
+    color: #f39c12;
+}
+
+.datos-curiosos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.datos-curiosos li {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.datos-curiosos li i {
+    margin-right: 10px;
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.infografia-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .infografia-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Estilos para la sección de autores */
+.section.dark2 {
+    background-color: #2A5A3C;
+    color: white;
+}
+
+.section.dark2 h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.autores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.autor-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.autor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.autor-foto {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.autor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.autor-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.autor-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--ocre);
+    font-size: 1.3rem;
+}
+
+.autor-contacto {
+    font-size: 0.9rem;
+}
+
+.autor-contacto p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.autor-contacto i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--ocre);
+}
+
+@media (max-width: 600px) {
+    .autor-card {
+        flex-direction: column;
+    }
+    
+    .autor-foto {
+        width: 100%;
+        height: 200px;
+    }
+}
